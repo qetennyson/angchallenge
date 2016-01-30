@@ -5,14 +5,20 @@
 		<link rel="stylesheet" type="text/css" href="custom.css"></link>
 	</head>
 	<body ng-controller="StoreController as store">
-		<h1>{{"Hello, Angular!"}}</h1>
-			<div class="product row" id="prod1">
+		<!-- Indicates that ng-controller runs the JS for DOM -->
+		<div class="header">
+			<h1>{{"Quincy's Magic Rock Emporium"}}</h1>
+		</div>
+			<div class="product row" ng-show="!store.product.soldOut" id="products" ng-repeat="product in store.products">
+				<!-- If the product is sold out, it will not appear in store (var gems), and at a later point in the assignment, we have made this a very handy looped array for populating dem virtual shelves. -->
 				<h3>
-					{{store.product.name}}
-
-					<em class="pull-right">{{store.product.price}}</em>
-
+					{{product.name}}
+					<em class="pull-right">${{product.price}}</em>
 				</h3>
+				<p>{{product.description}}</p>
+				<!-- If the product cannot be purchased, button will not appear, (var gems) -->
+				<button ng-show="store.product.canPurchase">Add to Cart</button>
+			</div>
 
 
 

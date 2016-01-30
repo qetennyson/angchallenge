@@ -1,4 +1,24 @@
-#prod1 {
-	margin-right: 30px;
-	margin-left: 30px;
+/* General Styles */
+
+/* I saw some serious debate on the value of site-wrappers over just modifying
+the body element.  I'll experiment with both as I learn, but for now, I'll 
+use the base element. */
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	min-width: 300px;
+}
+
+/* Div Styles and Other Containers */
+
+.header {
+	margin-left: 20px;
+}
+
+#products {
+	margin-right: 200px;
+	margin-left: 80px;
+	margin-top: 20px;
 }
