@@ -28,14 +28,15 @@ body {
 	margin-left: 90px;
 }
 
-.gallery img{
+.img-wrap {
 	margin-left: 48px;
-	margin-bottom: 6px;
-
 }
 
 #thumbs img {
 	width: 54px;
 	height: 54px;
+}
 
+#tabsection {
+	margin-top: 10px;
 }

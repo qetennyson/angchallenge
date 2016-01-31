@@ -18,18 +18,21 @@
 				<p>{{product.description}}</p>
 				<!-- If the product cannot be purchased, button will not appear, (var gems) -->
 				
-					<div class="gallery">
-						<img ng-src="{{product.images[0]}}"/>
+				<div class='gallery' ng-controller="GalleryController as gallery" ng-show="product.images.length">
+					<div class="img-wrap">
+						<img ng-src="{{product.images[gallery.current]}}" />
 					</div>
+				
 					<ul class="img-thumbnails clearfix" id="thumbs">
 						<li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
 							<img ng-src="{{image}}"/>
 						</li>
 					</ul>
+				</div>
 
 				<button ng-show="product.canPurchase">Add to Cart</button>
 
-				<section ng-controller="TabController as tabs">
+				<section ng-controller="TabController as tabs" id="tabsection">
 				<ul class="nav nav-pills">
 					<!-- ng class allows us to specify the active tab 
 					based on click event -->

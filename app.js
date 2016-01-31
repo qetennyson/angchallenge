@@ -15,7 +15,8 @@
 
 		this.isSet = function(checkTab){
 			return this.tab === checkTab;
-		}
+		};
+	});
 
 	app.controller('GalleryController', function(){
 		this.current = 0;
@@ -25,11 +26,14 @@
 		};
 	});
 
-	});
 
 	/* This didn't begin as an array, but near the end of assignment 1 at
 	code school, we found out that a loop makes it much easier to populate 
 	our store. */
+
+	/*So in the beginning of 3.1, they merge all of the var gems into an array,
+	and then just assign that array to this.products.  I am not going to do that right now,
+	but I'll experiment with it at the end.  This works, so I'm not breaking it for now. */
 
 	var gems = [
 		{
@@ -44,6 +48,18 @@
 				'gem-05.gif',
 				'gem-09.gif'
 			],
+			reviews: [
+				{
+					stars: 5,
+					body: "So, I've recently become a mineral collector after recieving grievious injuries in my job at the DEA.  My godforsaken wife does not understand the nuances of this hobby, and always calls my minerals rocks.  I'm going to murder her.",
+					author: "hank@hankthoughts.com"
+				},
+				{
+					stars: 2,
+					body: "Really not as impressed as I thought I'd be."
+					author: "tim@stinkybutt.com"
+				}
+			]
 		},
 		{
 			name: 'Bloodstone',
@@ -55,7 +71,19 @@
 				'gem-01.gif',
 				'gem-03.gif',
 				'gem-04.gif'
-			]
+			],
+			reviews: [
+			{
+				stars: 3,
+				body: "Not bad, shiny gem.",
+				author: "kotcha@man.com"
+			},
+			{
+				stars: 4,
+				body: "Not perfection, but a good gem nonetheless",
+				author: "j@jay.com"
+			}
+		]
 		},
 		{
 			name: 'Zircon',
@@ -70,6 +98,18 @@
 				'gem-10.gif'
 
 			],
+			reviews: [
+			{
+				stars: 5,
+				body: "I just love this gem",
+				author: "excitedbygems@wow.com"
+			},
+			{
+				stars: 1,
+				body: "WORST. GEM. EVER.",
+				author: "capslock@neanderthal.com"
+			}
+		]
 		},
 		{
 			name: "Right Out d'Agate",
@@ -79,7 +119,19 @@
 			soldOut: false,
 			images: [
 				'agate.png'
-			]
+			],
+			reviews: [
+			{
+				stars: 5,
+				body: "This gem will be the key to Azeroth's destruction",
+				author: "arthas@frozenthrone.com"
+			},
+			{
+				stars: 2,
+				body: "It's just an agate, what's the big deal.",
+				author: "guy@wizards.magic"
+			}
+		]
 		}
 	];
 
