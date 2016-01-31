@@ -40,3 +40,8 @@ body {
 #tabsection {
 	margin-top: 10px;
 }
+
+.panel li {
+	list-style-type: none;
+	margin-left: -25px;
+}

@@ -56,7 +56,7 @@
 				},
 				{
 					stars: 2,
-					body: "Really not as impressed as I thought I'd be."
+					body: "Really not as impressed as I thought I'd be.",
 					author: "tim@stinkybutt.com"
 				}
 			]

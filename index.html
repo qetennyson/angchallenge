@@ -56,8 +56,42 @@
 					<p>{{product.specifications}}</p>
 				</div>
 				<div class="panel" ng-show="tabs.isSet(3)">
-					<h4>Reviews</h4>
-					<p>{{product.reviews}}</p>
+					<ul>
+						<h4>Reviews</h4>
+						<li ng-repeat="review in product.reviews">
+						
+							<blockquote>
+								<strong> {{review.stars}} Stars</strong>
+								{{review.body}}
+								<cite class="clearfix">- {{review.author}}</cite>
+							</blockquote>
+						</li>
+					</ul>
+
+					<form name="reviewForm">
+						<!-- Supposedly a live preview -->
+							<blockquote>
+								<strong>{{review.stars}} Stars</strong>
+								{{review.body}}
+								<cite class="clearfix">- {{review.author}}</cite>
+							</blockquote>
+							<!-- Review Form -->
+							<h4>Submit a Review</h4>
+							<fieldset class="form-group">
+								<select class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" ng-model="review.stars">
+									<option value="">Rate the Product</option>
+								</select>
+							</fieldset>
+							<fieldset class="form-group">
+								<textarea class="form-control" placedholder="Please write a short review..." title="Review" ng-model="review.body"></textarea>
+							</fieldset>
+							<fieldset class="form-group">
+								<input type="email" class="form-control" placeholder="jimmy@johns.com" title="Email" ng-model="review.author"/>
+							</fieldset>
+							<fieldest class="form-group">
+								<input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+							</fieldset>
+
 				</div>
 			</section>
 
