@@ -13,10 +13,12 @@ body {
 
 /* Div Styles and Other Containers */
 
+/* page */
 .header {
 	margin-left: 20px;
 }
 
+/* products */
 #products {
 	margin-right: 200px;
 	margin-left: 80px;
@@ -37,6 +39,7 @@ body {
 	height: 54px;
 }
 
+/* panels */
 #tabsection {
 	margin-top: 10px;
 }
@@ -45,3 +48,13 @@ body {
 	list-style-type: none;
 	margin-left: -25px;
 }
+
+/* review form */
+.ng-invalid.ng-dirty {
+	border-color: #fb5d35;
+}
+
+.ng-valid.ng-dirty {
+	border-color: #35fb43;
+}
+

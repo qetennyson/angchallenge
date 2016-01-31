@@ -63,22 +63,22 @@
 							<blockquote>
 								<strong> {{review.stars}} Stars</strong>
 								{{review.body}}
-								<cite class="clearfix">- {{review.author}}</cite>
+								<cite class="clearfix">- {{review.author}} on {{review.createdOn | date: 'longdate'}}</cite>
 							</blockquote>
 						</li>
 					</ul>
 
-					<form name="reviewForm" ng-controller='ReviewController as reviewCtrl' ng-submit="reviewCtrl.addReview(product)">
+					<form name="reviewForm" ng-controller='ReviewController as reviewCtrl' ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"novalidate>
 						<!-- Supposedly a live preview -->
 							<blockquote>
 								<strong>{{reviewCtrl.review.stars}} Stars</strong>
 								{{reviewCtrl.review.body}}
-								<cite class="clearfix">- {{reviewCtrl.review.author}}</cite>
+								<cite class="clearfix">- {{reviewCtrl.review.author}} on {{reviewCtrl.review.createdOn | date: 'longdate'}}</cite>
 							</blockquote>
 							<!-- Review Form -->
 							<h4>Submit a Review</h4>
 							<fieldset class="form-group">
-								<select class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" ng-model="reviewCtrl.review.stars">
+								<select class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" ng-model="reviewCtrl.review.stars" required>
 									<option value="">Rate the Product</option>
 								</select>
 							</fieldset>
@@ -86,7 +86,7 @@
 								<textarea class="form-control" placedholder="Please write a short review..." title="Review" ng-model="reviewCtrl.review.body"></textarea>
 							</fieldset>
 							<fieldset class="form-group">
-								<input type="email" class="form-control" placeholder="jimmy@johns.com" title="Email" ng-model="reviewCtrl.review.author"/>
+								<input type="email" class="form-control" placeholder="jimmy@johns.com" title="Email" ng-model="reviewCtrl.review.author" required/>
 							</fieldset>
 							<fieldest class="form-group">
 								<input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
