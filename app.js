@@ -17,21 +17,49 @@
 			price: 110.50.toFixed(2),
 			description: "IT'S A FREAKIN MINERAL, MARIE.",
 			canPurchase: false,
-			soldOut: true
+			soldOut: true,
+			images: [
+
+				'gem-02.gif',
+				'gem-05.gif',
+				'gem-09.gif'
+			],
 		},
 		{
 			name: 'Bloodstone',
 			price: 1099.99.toFixed(2),
 			description: "Popular on Storm Spirit, don't right click.",
 			canPurchase: true,
-			soldOut: false
+			soldOut: false,
+			images: [
+				'gem-01.gif',
+				'gem-03.gif',
+				'gem-04.gif'
+			]
 		},
 		{
 			name: 'Zircon',
 			price: 2.95.toFixed(2),
 			description: "Sounds like some Star Trek shit.",
 			canPurchase: true,
-			soldOut: false
+			soldOut: false,
+			images:[
+			
+				'gem-06.gif',
+				'gem-07.gif',
+				'gem-10.gif'
+
+			],
+		},
+		{
+			name: "Right Out d'Agate",
+			price: 100.40.toFixed(2),
+			description: 'shit is so rare we only have one picture',
+			canPurchase: true,
+			soldOut: false,
+			images: [
+				'agate.png'
+			]
 		}
 	];
 

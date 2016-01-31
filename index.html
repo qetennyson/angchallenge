@@ -9,17 +9,28 @@
 		<div class="header">
 			<h1>{{"Quincy's Magic Rock Emporium"}}</h1>
 		</div>
-			<div class="product row" ng-show="!store.product.soldOut" id="products" ng-repeat="product in store.products">
+			<div class="list-group-item" ng-show="!store.product.soldOut" id="products" ng-repeat="product in store.products">
 				<!-- If the product is sold out, it will not appear in store (var gems), and at a later point in the assignment, we have made this a very handy looped array for populating dem virtual shelves. -->
 				<h3>
 					{{product.name}}
-					<em class="pull-right">${{product.price}}</em>
+					<em class="pull-right">{{product.price | currency}}</em>
 				</h3>
 				<p>{{product.description}}</p>
 				<!-- If the product cannot be purchased, button will not appear, (var gems) -->
-				<button ng-show="store.product.canPurchase">Add to Cart</button>
-			</div>
+				
+					<div class="gallery">
+						<img ng-src="{{product.images[0]}}"/>
+					</div>
+					<ul class="img-thumbnails clearfix" id="thumbs">
+						<li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+							<img ng-src="{{image}}"/>
+						</li>
+					</ul>
 
+				<button ng-show="product.canPurchase">Add to Cart</button>
+
+			</div>
+			
 
 
 
