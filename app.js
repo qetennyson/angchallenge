@@ -1,10 +1,30 @@
 (function(){
-
 	
 	var app = angular.module('gemStore', []);
 
 	app.controller('StoreController', function(){
 		this.products = gems;
+	});
+
+	app.controller('TabController',function(){
+		this.tab = 1;
+
+		this.selectTab = function(setTab){
+			this.tab = setTab;
+		};
+
+		this.isSet = function(checkTab){
+			return this.tab === checkTab;
+		}
+
+	app.controller('GalleryController', function(){
+		this.current = 0;
+
+		this.setCurrent = function(newGallery){
+			this.current = newGallery || 0;
+		};
+	});
+
 	});
 
 	/* This didn't begin as an array, but near the end of assignment 1 at

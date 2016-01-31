@@ -29,6 +29,36 @@
 
 				<button ng-show="product.canPurchase">Add to Cart</button>
 
+				<section ng-controller="TabController as tabs">
+				<ul class="nav nav-pills">
+					<!-- ng class allows us to specify the active tab 
+					based on click event -->
+					<li ng-class="{ active: tabs.isSet(1)}"> 
+						<a href ng-click="tabs.selectTab(1)">Description</a> 
+					</li>
+					<li ng-class="{ active: tabs.isSet(2)}"> 
+						<a href ng-click="tabs.selectTab(2)">Specifications</a> 
+					</li>
+					<li ng-class="{ active: tabs.isSet(3)}"> 
+						<a href ng-click="tabs.selectTab(3)">Reviews</a> 
+					</li>
+				</ul>
+				<!-- each panel corresponds, via ng-show, to a specific click even in the nav-pills class, and ng-init forces a specific tab to show upon refresh -->
+				<div class="panel" ng-show="tabs.isSet(1)">
+					<h4>Description</h4>
+					<p>{{product.description}}</p>
+				</div>
+				<div class="panel" ng-show="tabs.isSet(2)">
+					<h4>Specifications</h4>
+					<p>{{product.specifications}}</p>
+				</div>
+				<div class="panel" ng-show="tabs.isSet(3)">
+					<h4>Reviews</h4>
+					<p>{{product.reviews}}</p>
+				</div>
+			</section>
+
+
 			</div>
 			
 
