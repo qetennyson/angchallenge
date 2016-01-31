@@ -26,6 +26,16 @@
 		};
 	});
 
+	app.controller('ReviewController', function(){
+		this.review={};
+
+		this.addReview = function(product) {
+			product.reviews.push(this.review);
+			this.review = {};
+		};
+
+	});
+
 
 	/* This didn't begin as an array, but near the end of assignment 1 at
 	code school, we found out that a loop makes it much easier to populate 
