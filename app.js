@@ -2,8 +2,9 @@
 	
 	var app = angular.module('gemStore', []);
 
-	app.controller('StoreController', function(){
+	app.controller('StoreController', function() {
 		this.products = gems;
+	
 	});
 
 	app.controller('TabController',function(){
@@ -36,6 +37,28 @@
 		};
 
 	});
+/* source of the problem right now.  I feel like I can get around the security errors involved with
+pulling from my URL for this directive if I can figure out the injector, and $sce.  But the injector,
+just won't work right */
+
+/* here's Chrome's output:
+Error: [$injector:unpr] http://errors.angularjs.org/1.4.9/$injector/unpr?p0=%24scopeProvider%20%3C-%20%24scope%20%3C-%20productDescriptionDirective
+    at Error (native)
+    at ...... and it continues.  It indicates an issue with the injector here
+    */
+
+    /* Commented out, but usable directive with security error. 
+	app.directive('productDescription', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'http://127.0.0.1:8887/product-description.html'
+		
+		};
+	});
+*/
+
+		
+
 
 
 	/* This didn't begin as an array, but near the end of assignment 1 at
