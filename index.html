@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="gemStore"> <!-- Runs the store module when the DOM loads -->
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.6-dist 3/css/bootstrap.min.css"></link>
+		<link rel="stylesheet" type="text/css" href="custom.css"></link>
+	</head>
+	<body ng-controller="StoreController as store">
+		<!-- Indicates that ng-controller runs the JS for DOM -->
+		<div class="header">
+			<h1>{{"Quincy's Magic Rock Emporium"}}</h1>
+		</div>
+			<div class="list-group-item" ng-show="!store.product.soldOut" id="products" ng-repeat="product in store.products">
+				<!-- If the product is sold out, it will not appear in store (var gems), and at a later point in the assignment, we have made this a very handy looped array for populating dem virtual shelves. -->
+				<h3>
+					{{product.name}}
+					<em class="pull-right">{{product.price | currency}}</em>
+				</h3>
+			
+				<!-- If the product cannot be purchased, button will not appear, (var gems) -->
+				
+				<div class='gallery' ng-controller="GalleryController as gallery" ng-show="product.images.length">
+					<div class="img-wrap">
+						<img ng-src="{{product.images[gallery.current]}}" />
+					</div>
+				
+					<ul class="img-thumbnails clearfix" id="thumbs">
+						<li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+							<img ng-src="{{image}}"/>
+						</li>
+					</ul>
+				</div>
+
+				<button ng-show="product.canPurchase">Add to Cart</button>
+
+				<section ng-controller="TabController as tabs" id="tabsection">
+				<ul class="nav nav-pills">
+					<!-- ng class allows us to specify the active tab 
+					based on click event -->
+					<li ng-class="{ active: tabs.isSet(1)}"> 
+						<a href ng-click="tabs.selectTab(1)">Description</a> 
+					</li>
+					<li ng-class="{ active: tabs.isSet(2)}"> 
+						<a href ng-click="tabs.selectTab(2)">Specifications</a> 
+					</li>
+					<li ng-class="{ active: tabs.isSet(3)}"> 
+						<a href ng-click="tabs.selectTab(3)">Reviews</a> 
+					</li>
+				</ul>
+				<!-- each panel corresponds, via ng-show, to a specific click even in the nav-pills class, and ng-init forces a specific tab to show upon refresh -->
+				<div class="panel" ng-show="tabs.isSet(1)">
+					<h4>Description</h4>
+					<p>{{product.description}}</p>
+				</div>
+				<div class="panel" ng-show="tabs.isSet(2)">
+					<h4>Specifications</h4>
+					<p>{{product.specifications}}</p>
+				</div>
+				<div class="panel" ng-show="tabs.isSet(3)">
+					<ul>
+						<h4>Reviews</h4>
+						<li ng-repeat="review in product.reviews">
+						
+							<blockquote>
+								<strong> {{review.stars}} Stars</strong>
+								{{review.body}}
+								<cite class="clearfix">- {{review.author}} on {{review.createdOn | date: 'longdate'}}</cite>
+							</blockquote>
+						</li>
+					</ul>
+
+					<form name="reviewForm" ng-controller='ReviewController as reviewCtrl' ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"novalidate>
+						<!-- Supposedly a live preview -->
+							<blockquote>
+								<strong>{{reviewCtrl.review.stars}} Stars</strong>
+								{{reviewCtrl.review.body}}
+								<cite class="clearfix">- {{reviewCtrl.review.author}} on {{reviewCtrl.review.createdOn | date: 'longdate'}}</cite>
+							</blockquote>
+							<!-- Review Form -->
+							<h4>Submit a Review</h4>
+							<fieldset class="form-group">
+								<select class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" ng-model="reviewCtrl.review.stars" required>
+									<option value="">Rate the Product</option>
+								</select>
+							</fieldset>
+							<fieldset class="form-group">
+								<textarea class="form-control" placedholder="Please write a short review..." title="Review" ng-model="reviewCtrl.review.body"></textarea>
+							</fieldset>
+							<fieldset class="form-group">
+								<input type="email" class="form-control" placeholder="jimmy@johns.com" title="Email" ng-model="reviewCtrl.review.author" required/>
+							</fieldset>
+							<fieldest class="form-group">
+								<input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+							</fieldset>
+
+				</div>
+			</section>
+
+
+			</div>
+			
+
+
+
+		<!-- Moved Scripts to bottom of page for fastest loading -->
+		<script type="text/javascript" src="angular.min.js"></script>
+		<!-- ref to my webapp -->
+		<script type="text/javascript" src="app.js"></script> 
+
+	</body>
+</html>
