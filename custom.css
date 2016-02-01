@@ -1,3 +1,7 @@
+/* Imports and Misc */
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Lora);
+
 /* General Styles */
 
 /* I saw some serious debate on the value of site-wrappers over just modifying
@@ -9,26 +13,59 @@ body {
 	margin-right: auto;
 	width: auto;
 	min-width: 300px;
+	max-width: 800px;
+	background-color: #00aba9;
 }
+
+
 
 /* Div Styles and Other Containers */
 
 /* page */
 .header {
-	margin-left: 20px;
+	margin-left: 10px;
+	color: white;
+	font-family: 'Montserrat';
+	margin-right: 20px;
 }
 
 /* products */
 #products {
-	margin-right: 200px;
-	margin-left: 80px;
+	margin-right: 90px;
+	margin-left: 40px;
 	margin-top: 20px;
-	min-width: 350px;
+	width: 75%;
+	position: relative;
 }
+
+/*
+<div style="display:table;">
+  <div style="display:table-cell;vertical-align:middle;">
+    <div style="text-align:center;">Text Content</div>
+  </div>
+</div>*/
+
 
 #products button {
 	margin-left: 90px;
 }
+
+.list-group-item {
+	border-radius: 15px;
+}
+
+.list-group-item h3 {
+	margin-top: 10px;
+}
+.list-group-item h3, .list-group-item h4, .list-group-item em{
+	font-family: 'Montserrat';
+}
+
+.list-group-item p {
+	font-family: 'Lora';
+}
+
+.list-group-item
 
 .img-wrap {
 	margin-left: 48px;
@@ -38,6 +75,15 @@ body {
 	width: 54px;
 	height: 54px;
 }
+
+/* alignment of gem images to center, credit to howtocenterincss.com...
+you da real MVP */
+
+.gallery.ng-scope {
+	
+
+}
+
 
 /* panels */
 #tabsection {
