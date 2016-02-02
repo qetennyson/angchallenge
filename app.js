@@ -37,20 +37,33 @@
 		};
 
 	});
+/* source of the problem right now.  I feel like I can get around the security errors involved with
+pulling from my URL for this directive if I can figure out the injector, and $sce.  But the injector,
+just won't work right */
+
+/* here's Chrome's output:
+Error: [$injector:unpr] 
+http://errors.angularjs.org/1.4.9/$injector/unpr?p0=%24scopeProvider%20%3C-%20%24scope%20%3C-%20productDescriptionDirective 
+    at Error (native)
+    at ...... and it continues.  It indicates an issue with the injector here
+    */
 
 	app.directive('productDescription', function(){
 		return {
 			restrict: 'E',
 			templateUrl: './product-description.html'
-        };
-    });
+		
+		};
+	});
 
-    app.directive('productSpecs', function(){
-    	return {
-    		restrict: 'A',
-    		templateUrl: './product-specs.html'
-    	};
-    });
+	app.directive('productSpecs', function(){
+		return {
+			restrict: 'A',
+			templateUrl: './product-specs.html'
+		};
+	});
+
+
 
 
 		
@@ -72,10 +85,10 @@
 			description: "IT'S A FREAKIN MINERAL, MARIE.",
 			canPurchase: false,
 			soldOut: true,
-			shine: 8,
-			rarity: 7,
-			color: '#CCC',
-			faces: 14,
+			shine: 11,
+	        rarity: 12,
+	        color: 'Orange',
+	        faces: 8,
 			images: [
 
 				'gem-02.gif',
@@ -102,9 +115,9 @@
 			canPurchase: true,
 			soldOut: false,
 			shine: 4,
-			rarity: 3,
-			color: '#cde',
-			faces: 8,
+	        rarity: 3,
+	        color: 'Orange',
+	        faces: 1,
 			images: [
 				'gem-01.gif',
 				'gem-03.gif',
@@ -129,10 +142,10 @@
 			description: "Sounds like some Star Trek shit.",
 			canPurchase: true,
 			soldOut: false,
-			shine: 10,
-			rarity: 10,
-			color: '#72a',
-			faces: 7,
+			shine: 9000,
+	        rarity: 12,
+	        color: 'Magenta',
+	        faces: 400,
 			images:[
 			
 				'gem-06.gif',
@@ -159,10 +172,10 @@
 			description: 'shit is so rare we only have one picture',
 			canPurchase: true,
 			soldOut: false,
-			shine: 2,
-			rarity: 1,
-			color: '#bbb',
-			faces: 5,
+			shine: 8,
+	        rarity: 7,
+	        color: 'Green',
+	        faces: 14,
 			images: [
 				'agate.png'
 			],

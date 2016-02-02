@@ -47,9 +47,10 @@
 					</li>
 				</ul>
 				<!-- each panel corresponds, via ng-show, to a specific click even in the nav-pills class, and ng-init forces a specific tab to show upon refresh -->
+
 				<product-description ng-show="tabs.isSet(1)"></product-description>
-					
-				<!-- <product-specs ng-show="tabs.isSet(2)"></product-specs> -->
+				
+				<div product-specs ng-show="tabs.isSet(2)"></div>
 
 				<div class="panel" ng-show="tabs.isSet(3)">
 					<ul>
@@ -59,7 +60,7 @@
 							<blockquote>
 								<strong> {{review.stars}} Stars</strong>
 								{{review.body}}
-								<cite class="clearfix">- {{review.author}} on {{review.createdOn | date: 'longdate'}}</cite>
+								<cite class="clearfix">- {{review.author}} on {{review.createdOn | date:'medium'}}</cite>
 							</blockquote>
 						</li>
 					</ul>
@@ -99,8 +100,12 @@
 
 		<!-- Moved Scripts to bottom of page for fastest loading -->
 		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+		
 		<!-- ref to my webapp -->
 		<script type="text/javascript" src="app.js"></script> 
+
+		
 
 	</body>
 </html>
