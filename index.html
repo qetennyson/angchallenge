@@ -47,10 +47,8 @@
 					</li>
 				</ul>
 				<!-- each panel corresponds, via ng-show, to a specific click even in the nav-pills class, and ng-init forces a specific tab to show upon refresh -->
-				<div class="panel" ng-show="tabs.isSet(1)">
-					<h4>Description</h4>
-					<p>{{product.description}}</p>
-				</div>
+				<product-description></product-description>
+				
 				<div class="panel" ng-show="tabs.isSet(2)">
 					<h4>Specifications</h4>
 					<p>{{product.specifications}}</p>
@@ -103,8 +101,12 @@
 
 		<!-- Moved Scripts to bottom of page for fastest loading -->
 		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+		
 		<!-- ref to my webapp -->
 		<script type="text/javascript" src="app.js"></script> 
+
+		
 
 	</body>
 </html>
