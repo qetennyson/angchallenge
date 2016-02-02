@@ -47,7 +47,8 @@
 					</li>
 				</ul>
 				<!-- each panel corresponds, via ng-show, to a specific click even in the nav-pills class, and ng-init forces a specific tab to show upon refresh -->
-				<product-description></product-description>
+
+				<product-description ng-show="tabs.isSet(1)"></product-description>
 				
 				<div class="panel" ng-show="tabs.isSet(2)">
 					<h4>Specifications</h4>
@@ -61,7 +62,7 @@
 							<blockquote>
 								<strong> {{review.stars}} Stars</strong>
 								{{review.body}}
-								<cite class="clearfix">- {{review.author}} on {{review.createdOn | date: 'longdate'}}</cite>
+								<cite class="clearfix">- {{review.author}} on {{review.createdOn | date:'medium'}}</cite>
 							</blockquote>
 						</li>
 					</ul>

@@ -94,12 +94,12 @@ section a {
 }
 
 /* alignment of gem images to center, credit to howtocenterincss.com...
-you da real MVP */
+you da real MVP...
 
 .gallery.ng-scope {
-	
-
 }
+
+still figuring this shit out.*/
 
 
 /* panels */
@@ -110,6 +110,11 @@ you da real MVP */
 .panel li {
 	list-style-type: none;
 	margin-left: -25px;
+	padding: 10px;
+}
+
+.nav>li>a {
+	margin: 2px;
 }
 
 /* review form */
