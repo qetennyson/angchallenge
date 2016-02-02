@@ -50,10 +50,8 @@
 
 				<product-description ng-show="tabs.isSet(1)"></product-description>
 				
-				<div class="panel" ng-show="tabs.isSet(2)">
-					<h4>Specifications</h4>
-					<p>{{product.specifications}}</p>
-				</div>
+				<div product-specs ng-show="tabs.isSet(2)"></div>
+
 				<div class="panel" ng-show="tabs.isSet(3)">
 					<ul>
 						<h4>Reviews</h4>

@@ -56,6 +56,13 @@ http://errors.angularjs.org/1.4.9/$injector/unpr?p0=%24scopeProvider%20%3C-%20%2
 		};
 	});
 
+	app.directive('productSpecs', function(){
+		return {
+			restrict: 'A',
+			templateUrl: './product-specs.html'
+		};
+	});
+
 
 
 
@@ -78,6 +85,10 @@ http://errors.angularjs.org/1.4.9/$injector/unpr?p0=%24scopeProvider%20%3C-%20%2
 			description: "IT'S A FREAKIN MINERAL, MARIE.",
 			canPurchase: false,
 			soldOut: true,
+			shine: 11,
+	        rarity: 12,
+	        color: 'Orange',
+	        faces: 8,
 			images: [
 
 				'gem-02.gif',
@@ -103,6 +114,10 @@ http://errors.angularjs.org/1.4.9/$injector/unpr?p0=%24scopeProvider%20%3C-%20%2
 			description: "Popular on Storm Spirit, don't right click.",
 			canPurchase: true,
 			soldOut: false,
+			shine: 4,
+	        rarity: 3,
+	        color: 'Orange',
+	        faces: 1,
 			images: [
 				'gem-01.gif',
 				'gem-03.gif',
@@ -127,6 +142,10 @@ http://errors.angularjs.org/1.4.9/$injector/unpr?p0=%24scopeProvider%20%3C-%20%2
 			description: "Sounds like some Star Trek shit.",
 			canPurchase: true,
 			soldOut: false,
+			shine: 9000,
+	        rarity: 12,
+	        color: 'Magenta',
+	        faces: 400,
 			images:[
 			
 				'gem-06.gif',
@@ -153,6 +172,10 @@ http://errors.angularjs.org/1.4.9/$injector/unpr?p0=%24scopeProvider%20%3C-%20%2
 			description: 'shit is so rare we only have one picture',
 			canPurchase: true,
 			soldOut: false,
+			shine: 8,
+	        rarity: 7,
+	        color: 'Green',
+	        faces: 14,
 			images: [
 				'agate.png'
 			],
