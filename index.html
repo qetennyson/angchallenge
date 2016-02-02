@@ -47,14 +47,10 @@
 					</li>
 				</ul>
 				<!-- each panel corresponds, via ng-show, to a specific click even in the nav-pills class, and ng-init forces a specific tab to show upon refresh -->
-				<div class="panel" ng-show="tabs.isSet(1)">
-					<h4>Description</h4>
-					<p>{{product.description}}</p>
-				</div>
-				<div class="panel" ng-show="tabs.isSet(2)">
-					<h4>Specifications</h4>
-					<p>{{product.specifications}}</p>
-				</div>
+				<product-description ng-show="tabs.isSet(1)"></product-description>
+					
+				<!-- <product-specs ng-show="tabs.isSet(2)"></product-specs> -->
+
 				<div class="panel" ng-show="tabs.isSet(3)">
 					<ul>
 						<h4>Reviews</h4>
