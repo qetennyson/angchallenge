@@ -6,9 +6,22 @@
 	</head>
 	<body ng-controller="StoreController as store">
 		<!-- Indicates that ng-controller runs the JS for DOM -->
+		<div class="headergems">
+			<img src="badge4.png"></img>
+			<img src="badge3.png"></img>
+			<img src="badge2.png"></img>
+			<img src="badge1.png"></img>
+		</div>
 		<div class="header">
 			<h1>{{"Quincy's Magic Rock Emporium"}}</h1>
 		</div>
+
+		
+
+			
+			
+			
+		
 			<div class="list-group-item" ng-show="!store.product.soldOut" id="products" ng-repeat="product in store.products">
 				<!-- If the product is sold out, it will not appear in store (var gems), and at a later point in the assignment, we have made this a very handy looped array for populating dem virtual shelves. -->
 				<h3>
