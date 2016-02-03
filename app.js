@@ -6,7 +6,7 @@
 		this.products = gems;
 	
 	});
-
+/*
 	app.controller('TabController',function(){
 		this.tab = 1;
 
@@ -18,7 +18,8 @@
 			return this.tab === checkTab;
 		};
 	});
-
+*/
+/*
 	app.controller('GalleryController', function(){
 		this.current = 0;
 
@@ -26,6 +27,7 @@
 			this.current = newGallery || 0;
 		};
 	});
+*/
 
 	app.controller('ReviewController', function(){
 		this.review={};
@@ -37,16 +39,6 @@
 		};
 
 	});
-/* source of the problem right now.  I feel like I can get around the security errors involved with
-pulling from my URL for this directive if I can figure out the injector, and $sce.  But the injector,
-just won't work right */
-
-/* here's Chrome's output:
-Error: [$injector:unpr] 
-http://errors.angularjs.org/1.4.9/$injector/unpr?p0=%24scopeProvider%20%3C-%20%24scope%20%3C-%20productDescriptionDirective 
-    at Error (native)
-    at ...... and it continues.  It indicates an issue with the injector here
-    */
 
 	app.directive('productDescription', function(){
 		return {
@@ -60,6 +52,43 @@ http://errors.angularjs.org/1.4.9/$injector/unpr?p0=%24scopeProvider%20%3C-%20%2
 		return {
 			restrict: 'A',
 			templateUrl: './product-specs.html'
+		};
+	});
+
+	app.directive('productTabs', function(){
+		return {
+			restrict: 'E',
+			templateUrl: './product-tabs.html',
+			controller:function(){
+				this.tab = 1;
+
+				this.selectTab = function(setTab){
+					this.tab = setTab;
+				};
+
+				this.isSet = function(checkTab){
+					return this.tab === checkTab;
+				};
+
+			},
+			controllerAs:'tabs'
+		};
+
+	});
+
+	app.directive('productGallery',function(){
+		return {
+			restrict: 'E',
+			templateUrl: './product-gallery.html',
+			controller:function(){
+				this.current = 0;
+
+				this.setCurrent = function(newGallery){
+				this.current = newGallery || 0;
+			};
+
+			},
+			controllerAs: 'gallery'
 		};
 	});
 
